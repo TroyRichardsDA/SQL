@@ -1,0 +1,26 @@
+--Create a dealership database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, model TEXT, make TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO store VALUES (1, "Civic", "Honda", 10, 9000);
+INSERT INTO store VALUES (2, "Corolla", "Toyota", 12, 7000);
+INSERT INTO store VALUES (3, "Camry", "Toyota",8, 9000);
+INSERT INTO store VALUES( 4, "ES 350", "Lexus", 1, 6500);
+INSERT INTO store VALUES(5, "ES 300", "Lexus", 4, 6300);
+INSERT INTO store VALUES(6, "IS 300", "Lexus", 12, 7000);
+INSERT INTO store VALUES(7, "Civiv S", "Honda", 11, 12000);
+INSERT INTO store VALUES(8, "RAV4", "Toyota", 10, 10000);
+INSERT INTO store VALUES(9, "Charger", "Dodge", 3, 15000);
+INSERT INTO store VALUES (10, "Ram", "Dodge", 4, 20000);
+INSERT INTO store VALUES (11, "F-150", "Ford", 12, 14000);
+INSERT INTO store VALUES (12, "Focus", "Ford", 8, 29900);
+INSERT INTO store VALUES (13, "Fusion", "Ford", 14, 20039);
+INSERT INTO store VALUES (14, "4x4", "Jeep", 12, 12939);
+INSERT INTO store VALUES (15, "Soul", "Kia", 9, 9090);
+
+
+--display the database ordered by price.
+SELECT make, model, price FROM store ORDER BY price;
+
+--How many cars with the make Honda is available?
+SELECT make, SUM(quantity) FROM store WHERE make = "Honda";
