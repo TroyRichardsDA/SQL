@@ -1,0 +1,41 @@
+/* A table of my favorite artists */
+
+CREATE TABLE artists ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, genre TEXT);
+
+INSERT INTO artists (name, genre) VALUES ("Drake", "Hip-Hop");
+INSERT INTO artists (name, genre) VALUES ("Kendrick Lamar", "Hip-Hop");
+INSERT INTO artists (name, genre) VALUES ("Steve Lacy", "Pop");
+INSERT INTO artists (name, genre) VALUES ("Tyler The Creator", "Hip-Hop");
+INSERT INTO artists (name, genre) VALUES ("Future", "Trap");
+INSERT INTO artists (name, genre) VALUES ("Liana Flores", "Indie");
+INSERT INTO artists (name, genre) VALUES ("Kali Uchis", "R&B");
+INSERT INTO artists (name, genre) VALUES ("Chris Brown", "R&B");
+INSERT INTO artists (name, genre) VALUES ("Frank Ocean", "R&B");
+INSERT INTO artists (name, genre) VALUES ("Travis Scott", "Trap");
+INSERT INTO artists (name, genre) VALUES ("Logic", "Hip-Hop");
+INSERT INTO artists (name, genre) VALUES ("J.I.D", "Hip-hop");
+INSERT INTO artists (name, genre) VALUES ("J. Cole", "Hip-Hop");
+
+/* A table of each artist's breakout song */
+
+CREATE TABLE performance ( id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, first_hit TEXT);
+
+INSERT INTO performance (person_id, first_hit) VALUES (1, "Best I Ever Had");
+INSERT INTO performance (person_id, first_hit) VALUES (2, "The Recipe");
+INSERT INTO performance (person_id, first_hit) VALUES (3, "Bad Habit");
+INSERT INTO performance (person_id, first_hit) VALUES (4, "Yonkers");
+INSERT INTO performance (person_id, first_hit) VALUES (6, "Rises The Moon");
+INSERT INTO performance (person_id, first_hit) VALUES (7, "Telepatía");
+INSERT INTO performance (person_id, first_hit) VALUES (8, "Run it");
+INSERT INTO performance (person_id, first_hit) VALUES (9, "Thinking bout you");
+INSERT INTO performance (person_id, first_hit) VALUES (10, "Upper Echelon");
+INSERT INTO performance (person_id, first_hit) VALUES (11, "Welcome To Forever");
+INSERT INTO performance (person_id, first_hit) VALUES (12, "Never");
+INSERT INTO performance (person_id, first_hit) VALUES (13, "Lights Please");
+
+/* Match the name of the artist to their first hit song. */
+
+SELECT a.name, p.first_hit 
+    FROM artists a
+    JOIN performance p
+    ON a.id = p.person_id;
